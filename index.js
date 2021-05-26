@@ -9,8 +9,12 @@ const tutorials = [
   'what is the difference between == and ===?',
   'what is the difference between event capturing and bubbling?',
   'what is JSONP?'
-];
+]
 
-const titleCased = () => {
-  return tutorials
-}
+const titleCased = () => tutorials.map(tutorial => {
+  const splitWords = tutorial.split(' ')
+  const firstLetter = splitWords.map(word => {
+    return word.charAt(0).toUpperCase() + word.slice(1)
+  }) 
+  return firstLetter.join(' ')
+}) 
